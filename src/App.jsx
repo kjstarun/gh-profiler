@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Repo from "./components/Repo";
 import { useEffect, useState } from "react";
 import Followers from "./components/Followers";
+import Home from "./components/Home";
+import Loader from "./components/loader";
 
 function App({ props }) {
   // return <Submit />;
@@ -20,17 +22,25 @@ function App({ props }) {
   const [currentUser, setCurrentUser] = useState({});
   const [followers, setFollowers] = useState([]);
   const [repoDetails, setRepoDetails] = useState({});
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (searchUser.length !== 0) {
       console.log("api called");
-      fetch(`https://api.github.com/users/${searchUser}/repos`)
+      setLoading(true);
+      setCurrentUser([]);
+      setResultUser([]);
+      fetch(`https://api.github.com/users/${searchUser}/repos`, {
+       
+      })
         .then((data) => data.json())
         .then((data) => {
           setResultUser(data);
+          setLoading(false);
           setCurrentUser({
             name: data[0].owner.login,
             button: "Followers",
+            id: data[0].owner.id,
           });
         });
     }
@@ -48,9 +58,17 @@ function App({ props }) {
   };
   const fetchFollowers = (name) => {
     console.log("follow api");
-    fetch(`https://api.github.com/users/${name}/followers`)
+    setLoading(true);
+    setResultUser([]);
+    setCurrentUser([]);
+    fetch(`https://api.github.com/users/${name}/followers`, {
+      
+    })
       .then((data) => data.json())
-      .then((data) => setFollowers(data));
+      .then((data) => {
+        setFollowers(data);
+        setLoading(false);
+      });
   };
   const fetchfollowerRepo = (name) => {
     console.log("follow repo called");
@@ -58,10 +76,21 @@ function App({ props }) {
   };
   return (
     <>
+      {loading ? <Loader /> : ""}
       <BrowserRouter>
         <Routes>
           <Route
             path="/"
+            element={
+              <Home
+                setUsername={setUsername}
+                username={username}
+                handleUsername={handleUsername}
+              />
+            }
+          />
+          <Route
+            path="/username/:id"
             element={
               <Repos
                 setUsername={setUsername}
@@ -85,6 +114,7 @@ function App({ props }) {
             path="/followers"
             element={
               <Followers
+                username={username}
                 followers={followers}
                 fetchfollowerRepo={fetchfollowerRepo}
               />

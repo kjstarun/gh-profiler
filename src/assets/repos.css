@@ -1,0 +1,92 @@
+.repos-parent {
+  padding: 50px 0;
+  min-height: 100vh;
+  max-height: 100%;
+  background-image: linear-gradient(
+    to right top,
+    #1a2321,
+    #1c2827,
+    #1e2e2d,
+    #213334,
+    #23393c,
+    #213a3d,
+    #1f3a3f,
+    #1d3b40,
+    #16363a,
+    #0f3235,
+    #072d2f,
+    #012929
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.username {
+  display: flex;
+  gap: 200px;
+}
+
+.username span span {
+  color: rgba(255, 255, 255, 0.477);
+  font-size: 20px;
+}
+
+.username span {
+  color: #22b798;
+  font-size: 25px;
+}
+
+.repo-list {
+  max-width: 100%;
+  /* border: solid green; */
+  border-top: 1px dotted green;
+  padding: 20px 10px;
+  grid-row-gap: 60px;
+  grid-column-gap: 100px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.repo-name {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.799);
+  /* border: solid green; */
+  border-radius: 40px;
+  background-image: linear-gradient(
+    to right top,
+    #3e5f58,
+    #3d7468,
+    #388a79,
+    #30a088,
+    #22b798
+  );
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.followers-button {
+  width: 200px;
+  padding: 10px 10px;
+  border-radius: 35px;
+  border: none;
+  cursor: pointer;
+  background-image: linear-gradient(
+    to right top,
+    #3e5f58,
+    #3d7468,
+    #388a79,
+    #30a088,
+    #22b798
+  );
+}
+
+.followers-button:hover {
+  color: rgba(255, 255, 255, 0.477);
+}
+
+.repo-name:hover:hover {
+  color: white;
+}

@@ -1,0 +1,99 @@
+.home-page {
+  background-image: linear-gradient(
+    to right top,
+    #1a2321,
+    #1c2827,
+    #1e2e2d,
+    #213334,
+    #23393c,
+    #213a3d,
+    #1f3a3f,
+    #1d3b40,
+    #16363a,
+    #0f3235,
+    #072d2f,
+    #012929
+  );
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.username-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  width: 500px;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  caret-color: aliceblue;
+  color: white;
+}
+
+input::placeholder {
+  padding: 0 3px;
+}
+
+.home-button {
+  width: 200px;
+  padding: 10px 10px;
+  border-radius: 35px;
+  border: none;
+  cursor: pointer;
+  background-image: linear-gradient(
+    to right top,
+    #3e5f58,
+    #3d7468,
+    #388a79,
+    #30a088,
+    #22b798
+  );
+}
+
+.home-button:hover {
+  color: rgba(255, 255, 255, 0.477);
+}
+
+.header {
+  color: hsl(173, 97%, 46%);
+  font-size: 50px;
+  font-weight: bold;
+  font-family: monospace;
+  letter-spacing: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.header {
+  padding: 50px;
+  background: linear-gradient(
+    to right,
+    hsla(173, 97%, 46%, 0.433) 0,
+    hsl(0, 0%, 100%) 10%,
+    hsla(173, 97%, 46%, 0.433) 20%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite linear;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0;
+  }
+
+  60% {
+    background-position: 600px;
+  }
+
+  100% {
+    background-position: 600px;
+  }
+}

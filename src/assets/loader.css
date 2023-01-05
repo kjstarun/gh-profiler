@@ -1,0 +1,29 @@
+.body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+    to right top,
+    #1a2321,
+    #1c2827,
+    #1e2e2d,
+    #213334,
+    #23393c,
+    #213a3d,
+    #1f3a3f,
+    #1d3b40,
+    #16363a,
+    #0f3235,
+    #072d2f,
+    #012929
+  );
+}
+.logo {
+  color: green;
+}
+.load-description{
+ font-size: 25px;
+ letter-spacing: 15px;
+}
