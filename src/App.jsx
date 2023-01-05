@@ -24,12 +24,7 @@ function App({ props }) {
   useEffect(() => {
     if (searchUser.length !== 0) {
       console.log("api called");
-      fetch(`https://api.github.com/users/${searchUser}/repos`, {
-        headers: {
-          Authorization:
-            "Bearer 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",
-        },
-      })
+      fetch(`https://api.github.com/users/${searchUser}/repos`)
         .then((data) => data.json())
         .then((data) => {
           setResultUser(data);
@@ -53,26 +48,13 @@ function App({ props }) {
   };
   const fetchFollowers = (name) => {
     console.log("follow api");
-    fetch(`https://api.github.com/users/${name}/followers`, {
-      headers: {
-        Authorization:
-          "Bearer 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",
-      },
-    })
+    fetch(`https://api.github.com/users/${name}/followers`)
       .then((data) => data.json())
       .then((data) => setFollowers(data));
   };
   const fetchfollowerRepo = (name) => {
     console.log("follow repo called");
     setSearchUser(name);
-    // fetch(`https://api.github.com/users/${name}/repos`, {
-    //   headers: {
-    //     Authorization:
-    //       "Bearer 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",
-    //   },
-    // })
-    //   .then((data) => data.json())
-    //   .then((data) => setRepoDetails(data));
   };
   return (
     <>
