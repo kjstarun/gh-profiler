@@ -24,6 +24,14 @@
   gap: 30px;
 }
 
+header{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
 .username {
   display: flex;
   gap: 200px;
@@ -53,7 +61,6 @@
 .repo-name {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.799);
-  /* border: solid green; */
   border-radius: 40px;
   background-image: linear-gradient(
     to right top,
@@ -68,6 +75,7 @@
 }
 
 .followers-button {
+  /* margin-right: 20px; */
   width: 200px;
   padding: 10px 10px;
   border-radius: 35px;

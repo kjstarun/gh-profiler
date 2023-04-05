@@ -6,7 +6,7 @@ const Loader = () => {
   return (
     <div className="body">
       <h1 className="load-description header">
-        Fetching results based on your search
+        Fetching results on your search
       </h1>
       <MrMiyagi className={"logo"} color={"#388a79"} />
     </div>
